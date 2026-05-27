@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta tags for SEO and responsiveness -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Moe Kyaw Aung - Android Senior Developer with 12+ years experience. Expert in Kotlin, Jetpack Compose, Firebase, and scalable mobile apps.">
-    <meta name="keywords" content="Android Developer, Kotlin, Jetpack Compose, Senior Developer, Mobile Apps, Firebase">
-    <meta name="author" content="Moe Kyaw Aung">
-    <title>  Moe-Kyaw-Aung   | Android Senior Developer</title>
+    <meta name="description" content="Moe-Kyaw-Aung-Portfolio V58 — Android Senior Developer with 12+ years experience.">
+    <meta name="theme-color" content="#00d9ff">
+    <title>Moe-Kyaw-Aung-Portfolio V58</title>
+    
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
@@ -16,1501 +15,296 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Moe-Kyaw-Aung-Portfolio V58 | Android Senior Developer">
-    <meta property="og:description" content="12+ years building secure, scalable Android apps with Kotlin & Jetpack.">
-    <meta property="og:image" content="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
     <style>
-        /* CSS Custom Properties - Cyberpunk Neon Night Palette */
         :root {
-            /* Dark Mode */
-            --bg-primary: #0b0b1a;
-            --bg-secondary: #1a1a2e;
-            --bg-card: #16213e;
-            --primary-cyan: #00d9ff;
-            --accent-magenta: #ff00aa;
-            --text-primary: #ffffff;
-            --text-secondary: #b8bcc8;
-            --text-muted: #6c757d;
-            --border-light: rgba(0, 217, 255, 0.2);
-            --gradient-primary: linear-gradient(135deg, #00d9ff 0%, #ff00aa 50%, #00d9ff 100%);
-            --shadow-neon: 0 0 20px rgba(0, 217, 255, 0.3), 0 0 40px rgba(255, 0, 170, 0.2);
-            --shadow-glow: 0 0 30px rgba(0, 217, 255, 0.5);
-        }
-
-        /* Light Mode */
-        [data-theme="light"] {
-            --bg-primary: #f8fafc;
-            --bg-secondary: #e2e8f0;
-            --bg-card: #ffffff;
-            --primary-cyan: #0066cc;
-            --accent-magenta: #cc0066;
-            --text-primary: #1e293b;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border-light: rgba(0, 102, 204, 0.2);
-        }
-
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            color: var(--primary-cyan);
-            text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
-        }
-
-        /* Custom Cursor */
-        body.custom-cursor {
-            cursor: none;
-        }
-
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-cyan);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
-
-        .cursor-follower {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--primary-cyan);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-        }
-
-        /* Preloader */
-        .preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-primary);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: opacity 0.5s ease;
-        }
-
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(0, 217, 255, 0.3);
-            border-top: 3px solid var(--primary-cyan);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Left Sidebar Navigation */
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 280px;
-            height: 100vh;
-            background: rgba(11, 11, 26, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 2rem 0;
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-right: 1px solid var(--border-light);
-        }
-
-        .sidebar.hidden {
-            transform: translateX(-100%);
-        }
-
-        .sidebar-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0 2rem;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-light);
-            padding-bottom: 2rem;
-        }
-
-        .sidebar-logo img {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-cyan);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .nav-link {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 2rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-left: 3px solid transparent;
-            margin: 0.25rem 0;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--primary-cyan);
-            background: rgba(0, 217, 255, 0.1);
-            border-left-color: var(--primary-cyan);
-            transform: translateX(10px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .nav-link i {
-            width: 20px;
-            font-size: 1.2rem;
-        }
-
-        /* Mobile Hamburger */
-        .mobile-menu-toggle {
-            display: none;
-            position: fixed;
-            top: 1.5rem;
-            left: 1.5rem;
-            z-index: 1001;
-            background: rgba(11, 11, 26, 0.95);
-            border: 2px solid var(--primary-cyan);
-            border-radius: 8px;
-            padding: 0.5rem;
-            backdrop-filter: blur(20px);
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 280px;
-            min-height: 100vh;
-            padding: 0 0 100px 0;
-        }
-
-        /* Hero Section with Canvas Background */
-        .hero {
-            height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        #hero-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            padding: 0 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            margin-bottom: 1.5rem;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { filter: drop-shadow(0 0 20px var(--primary-cyan)); }
-            to { filter: drop-shadow(0 0 30px var(--accent-magenta)); }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.5s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            animation: fadeInUp 1s ease 1s both;
-        }
-
-        .btn-neon {
-            padding: 1rem 2rem;
-            border: 2px solid transparent;
-            background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
-                        var(--gradient-primary) border-box;
-            color: white;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-neon:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-neon);
-            background: var(--gradient-primary);
-            color: white;
-        }
-
-        /* Sections */
-        .section {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .container-fluid {
-            padding-left: 4rem;
-            padding-right: 4rem;
-        }
-
-        .section-title {
-            font-size: 3.5rem;
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: var(--gradient-primary);
-        }
-
-        /* Alternating Content Layout */
-        .content-row {
-            display: flex;
-            align-items: center;
-            gap: 4rem;
-            margin-bottom: 6rem;
-        }
-
-        .content-row.reverse {
-            flex-direction: row-reverse;
-        }
-
-        .content-text {
-            flex: 1;
-            padding: 2rem;
-        }
-
-        .content-image {
-            flex: 1;
-            position: relative;
-        }
-
-        .content-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: var(--shadow-neon);
-            transition: transform 0.5s ease;
-        }
-
-        .content-row:hover .content-image img {
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        /* Cards */
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--primary-cyan);
-        }
-
-        /* Stats Counter */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .stat-number {
-            font-size: 4rem;
-            font-weight: 900;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: block;
-        }
-
-        /* GitHub Collections */
-        .github-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .github-card {
-            height: 120px;
-            background: var(--bg-card);
-            border-radius: 15px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .github-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-glow);
-            border-color: var(--primary-cyan);
-        }
-
-        /* Pricing Table */
-        .pricing-table {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .pricing-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
-            border: 2px solid var(--border-light);
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card.featured {
-            border-color: var(--primary-cyan);
-            transform: scale(1.05);
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--primary-cyan);
-            margin: 1rem 0;
-        }
-
-        /* Carousel */
-        .carousel-inner img {
-            height: 400px;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        /* Contact Form */
-        .contact-form .form-control {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            color: var(--text-primary);
-            border-radius: 12px;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form .form-control:focus {
-            border-color: var(--primary-cyan);
-            box-shadow: 0 0 0 0.2rem rgba(0, 217, 255, 0.25);
-        }
-
-        /* FAQ Accordion */
-        .accordion-button {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .accordion-button:not(.collapsed) {
-            background: var(--gradient-primary);
-            color: white;
-        }
-
-        /* Lightbox Gallery */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-        /* Sticky Footer CTA */
-        .sticky-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        /* Back to Top */
-        .back-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border: none;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 99;
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            background: var(--bg-card);
-            border: 2px solid var(--border-light);
-            border-radius: 50%;
-            color: var(--primary-cyan);
-            cursor: pointer;
-            z-index: 1001;
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            box-shadow: var(--shadow-neon);
-            transform: scale(1.1);
-        }
-
-        /* Scroll Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Parallax */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .main-content {
-                margin-left: 0;
-            }
-            .container-fluid {
-                padding-left: 2rem;
-                padding-right: 2rem;
-            }
-            .sidebar {
-                transform: translateX(-100%);
-            }
-            .sidebar.mobile-open {
-                transform: translateX(0);
-            }
-            .mobile-menu-toggle {
-                display: block;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .content-row {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            .section {
-                padding: 80px 0;
-            }
-            .section-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Newsletter Form */
-        .newsletter-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-form input {
-            border-radius: 50px 0 0 50px;
-            border: none;
-            padding: 1rem 1.5rem;
-        }
-
-        .newsletter-form button {
-            border-radius: 0 50px 50px 0;
-            border: none;
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1rem 2rem;
-        }
-
-        /* Google Maps */
-        #map {
-            height: 400px;
-            border-radius: 20px;
-            margin-top: 2rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Maximize spacing */
-        .section {
-            padding: 150px 0;
-        }
-
-        .py-5 {
-            padding-top: 5rem !important;
-            padding-bottom: 5rem !important;
-        }
+            --bg-primary: #0b0b1a; --bg-secondary: #1a1a2e; --bg-card: #16213e;
+            --primary-cyan: #00d9ff; --accent-magenta: #ff00aa; --text-primary: #ffffff;
+        }
+        body { font-family: 'Roboto', sans-serif; background: var(--bg-primary); color: var(--text-primary); }
+        h1, h2, h3 { font-family: 'Orbitron', monospace; color: var(--primary-cyan); }
+        .sidebar { position: fixed; left: 0; top: 0; width: 280px; height: 100vh; background: rgba(11,11,26,0.95); border-right: 1px solid rgba(0,217,255,0.2); padding: 2rem 0; z-index: 1000; }
+        .nav-link { display: flex; align-items: center; gap: 1rem; padding: 1rem 2rem; color: #b8bcc8; text-decoration: none; }
+        .nav-link:hover, .nav-link.active { color: var(--primary-cyan); background: rgba(0,217,255,0.1); }
+        .section { padding: 120px 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; font-size: 3rem; }
+        .card { background: var(--bg-card); border: 1px solid rgba(0,217,255,0.2); border-radius: 16px; transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-8px); box-shadow: 0 0 20px rgba(0,217,255,0.3); }
+        .btn-neon { background: linear-gradient(135deg, #00d9ff, #ff00aa); color: white; border: none; padding: 12px 28px; border-radius: 50px; }
+        .github-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+        .github-card { background: var(--bg-card); padding: 1.5rem; border-radius: 12px; text-decoration: none; color: white; border: 1px solid rgba(0,217,255,0.2); }
+        .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-primary); display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .loader { width: 50px; height: 50px; border: 4px solid rgba(0,217,255,0.3); border-top: 4px solid var(--primary-cyan); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .theme-toggle { position: fixed; top: 20px; right: 20px; width: 50px; height: 50px; background: var(--bg-card); border: 2px solid rgba(0,217,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1001; cursor: pointer; }
+        .sticky-cta { position: fixed; bottom: 20px; right: 20px; z-index: 100; }
+        .back-to-top { position: fixed; bottom: 100px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #00d9ff, #ff00aa); color: white; border: none; border-radius: 50%; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 99; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .mobile-menu-toggle { display: none; position: fixed; top: 1.5rem; left: 1.5rem; z-index: 1002; background: var(--bg-card); border: 2px solid var(--primary-cyan); padding: 8px 12px; border-radius: 8px; }
+        @media (max-width: 992px) { .sidebar { transform: translateX(-100%); } .sidebar.mobile-open { transform: translateX(0); } .mobile-menu-toggle { display: block; } .main-content { margin-left: 0; } }
     </style>
 </head>
-<body class="custom-cursor">
+<body>
     <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="loader"></div>
-    </div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursor-follower"></div>
+    <div class="preloader" id="preloader"><div class="loader"></div></div>
 
     <!-- Theme Toggle -->
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
+    <div class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></div>
 
-    <!-- Mobile Menu Toggle -->
-    <button class="mobile-menu-toggle" id="mobileMenuToggle">
-        <i class="fas fa-bars"></i>
-    </button>
+    <!-- Mobile Menu -->
+    <button class="mobile-menu-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
 
-    <!-- Left Sidebar Navigation -->
+    <!-- Sidebar -->
     <nav class="sidebar" id="sidebar">
-        <div class="sidebar-logo">
-            <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" alt="Moe Kyaw Aung">
-            <div>
-                <h4>Moe Kyaw Aung</h4>
-                <p class="text-muted mb-0">Android Senior Dev</p>
+        <div class="px-4 mb-4">
+            <div class="d-flex align-items-center gap-3">
+                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778527878/IMG_20260430_053105_uef0yr.png" alt="Moe Kyaw Aung" style="width:55px;height:55px;border-radius:50%;border:3px solid var(--primary-cyan)">
+                <div><h5 class="mb-0">Moe Kyaw Aung</h5><small class="text-muted">Android Senior Developer</small></div>
             </div>
         </div>
         <a href="#hero" class="nav-link active"><i class="fas fa-home"></i> Home</a>
         <a href="#about" class="nav-link"><i class="fas fa-user"></i> About</a>
         <a href="#projects" class="nav-link"><i class="fas fa-code"></i> Projects</a>
-        <a href="#github" class="nav-link"><i class="fab fa-github"></i> GitHub</a>
-        <a href="#lovable" class="nav-link"><i class="fas fa-heart"></i> Lovable</a>
+        <a href="#github" class="nav-link"><i class="fab fa-github"></i> GitHub (42+)</a>
+        <a href="#lovable" class="nav-link"><i class="fas fa-heart"></i> Lovable WPA</a>
         <a href="#emails" class="nav-link"><i class="fas fa-envelope"></i> Emails</a>
         <a href="#social" class="nav-link"><i class="fas fa-share-alt"></i> Social</a>
         <a href="#pricing" class="nav-link"><i class="fas fa-dollar-sign"></i> Services</a>
-        <a href="#testimonials" class="nav-link"><i class="fas fa-star"></i> Reviews</a>
+        <a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i> FAQ</a>
         <a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> Contact</a>
     </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <canvas id="hero-canvas"></canvas>
-            <div class="hero-content">
-                <h1>Moe Kyaw Aung</h1>
-                <p class="hero-subtitle">Android Senior Developer</p>
-                <p class="lead mb-4">12+ years crafting secure, scalable mobile apps with Kotlin & modern Jetpack</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn-neon">Hire Me <i class="fas fa-arrow-right ms-2"></i></a>
-                    <a href="#projects" class="btn-neon">View Projects</a>
+    <div class="main-content">
+        <!-- Hero -->
+        <section id="hero" class="section d-flex align-items-center" style="min-height:100vh;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <h1 class="display-3 fw-bold">Moe-Kyaw-Aung-Portfolio V58</h1>
+                        <h2 class="mb-4">Android Senior Developer</h2>
+                        <p class="lead">12+ years building secure, scalable Kotlin & Jetpack Compose apps.</p>
+                        <div class="d-flex gap-3 mt-4">
+                            <a href="#contact" class="btn btn-neon btn-lg">Hire Me</a>
+                            <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 mt-5 mt-lg-0">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" class="img-fluid rounded-4" alt="Profile">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About -->
         <section id="about" class="section fade-in">
-            <div class="container-fluid">
-                <h2 class="section-title">About the Developer</h2>
-                <div class="content-row">
-                    <div class="content-text">
-                        <h3>Android Developer with 12 Years Experience</h3>
-                        <p class="lead">I build secure, scalable, and user-friendly mobile applications using modern Kotlin and Jetpack development. From pixel-perfect UI with Compose to robust networking and local caching, I deliver complete features end-to-end.</p>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="12">0</span>
-                                <h5>Years Experience</h5>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="5000">0</span>
-                                <h5>Projects Delivered</h5>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="100">0</span>
-                                <h5>Happy Clients</h5>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number" data-target="99">0</span>
-                                <h5>Success Rate</h5>
-                            </div>
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <p class="lead">Android Developer with nearly 12 years of hands-on experience building secure, scalable, and user-friendly mobile applications.</p>
+                        <div class="row mt-4">
+                            <div class="col-6 col-md-3"><div class="text-center"><span class="display-5 fw-bold" style="color:#00d9ff">12</span><div>Years</div></div></div>
+                            <div class="col-6 col-md-3"><div class="text-center"><span class="display-5 fw-bold" style="color:#00d9ff">50</span><div>Projects</div></div></div>
+                            <div class="col-6 col-md-3"><div class="text-center"><span class="display-5 fw-bold" style="color:#00d9ff">100</span><div>Clients</div></div></div>
+                            <div class="col-6 col-md-3"><div class="text-center"><span class="display-5 fw-bold" style="color:#00d9ff">99</span><div>Success</div></div></div>
                         </div>
                     </div>
-                    <div class="content-image">
-                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763535/MKA_25_lbx6fb.webp" alt="Moe Kyaw Aung working">
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png" class="img-fluid rounded-4" alt="About">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
-                <h2 class="section-title">Senior Level Projects</h2>
-                <div class="row">
-                    <div class="col-12">
-                        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747388/image-1_1_khsx9s.png" class="card-img-top" alt="Video Player">
-                                                <div class="card-body">
-                                                    <h5>Advanced Video Player</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763531/MKA_12_iv8kpm.webp" class="card-img-top" alt="Social Dashboard">
-                                                <div class="card-body">
-                                                    <h5>Social Dashboard</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image-1_f6zlmk.jpg" class="card-img-top" alt="Game Collection">
-                                                <div class="card-body">
-                                                    <h5>Game Collection</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/game-collection" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778763531/MKA_3_zqrhhr.webp" class="card-img-top" alt="PWA App">
-                                                <div class="card-body">
-                                                    <h5>PWA App</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/pwa-app" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778747384/image_1_buwgls.png" class="card-img-top" alt="Job Portal">
-                                                <div class="card-body">
-                                                    <h5>Job Portal App</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/Job-Portal-App" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 mb-4">
-                                            <div class="card">
-                                                <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795825/cloud-icon-poster-1_2_opl7sy.png" class="card-img-top" alt="POS Ultimate">
-                                                <div class="card-body">
-                                                    <h5>POS Ultimate Pro Max</h5>
-                                                    <a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="btn btn-neon btn-sm">View Code</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
-                        </div>
-                    </div>
+        <!-- Projects -->
+        <section id="projects" class="section fade-in" style="background:#1a1a2e;">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="row g-4">
+                    <div class="col-md-4"><div class="card p-4"><h5>Advanced Video Player</h5><a href="https://github.com/moekyawaung-tech/video-player" target="_blank" class="btn btn-neon btn-sm mt-3">View Code</a></div></div>
+                    <div class="col-md-4"><div class="card p-4"><h5>Social Dashboard</h5><a href="https://github.com/moekyawaung-tech/social-dashboard" target="_blank" class="btn btn-neon btn-sm mt-3">View Code</a></div></div>
+                    <div class="col-md-4"><div class="card p-4"><h5>POS Ultimate Pro Max</h5><a href="https://github.com/moekyawaung-tech/POS-Ultimate-Pro-Max" target="_blank" class="btn btn-neon btn-sm mt-3">View Code</a></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- GitHub Collections -->
+        <!-- GitHub -->
         <section id="github" class="section fade-in">
-            <div class="container-fluid">
-                <h2 class="section-title">GitHub Collections (42+ Repos)</h2>
+            <div class="container">
+                <h2 class="section-title">GitHub Collections (42+)</h2>
                 <div class="github-grid">
-                    <a href="https://moekyawaung-china.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-china</span>
-                    </a>
-                    <a href="https://moekyawaung-developer.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-developer</span>
-                    </a>
-                    <a href="https://moekyawaungvivov30pro-design.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaungvivov30pro</span>
-                    </a>
-                    <a href="https://moekyaw-aung-mm.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyaw-aung-mm</span>
-                    </a>
-                    <a href="https://moekyawaung-mk.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-mk</span>
-                    </a>
-                    <a href="https://moekyawaung-microsoft.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-microsoft</span>
-                    </a>
-                    <!-- Add more GitHub links following the same pattern -->
-                    <a href="https://moekyawaung-cyber.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-cyber</span>
-                    </a>
-                    <a href="https://moekyawaung-bangkok.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-bangkok</span>
-                    </a>
-                    <a href="https://moekyawaung-micro.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaung-micro</span>
-                    </a>
-                    <a href="https://moekyawaungmka2032-boop.github.io/" target="_blank" class="github-card">
-                        <i class="fab fa-github fa-2x mb-2" style="color: var(--primary-cyan);"></i>
-                        <span>moekyawaungmka2032</span>
-                    </a>
+                    <a href="https://moekyawaung-china.github.io/" target="_blank" class="github-card"><i class="fab fa-github fa-2x mb-2"></i> moekyawaung-china</a>
+                    <a href="https://moekyawaung-developer.github.io/" target="_blank" class="github-card"><i class="fab fa-github fa-2x mb-2"></i> moekyawaung-developer</a>
+                    <a href="https://moekyawaung-cyber.github.io/" target="_blank" class="github-card"><i class="fab fa-github fa-2x mb-2"></i> moekyawaung-cyber</a>
+                    <a href="https://moekyawaung-bangkok.github.io/" target="_blank" class="github-card"><i class="fab fa-github fa-2x mb-2"></i> moekyawaung-bangkok</a>
                 </div>
                 <div class="text-center mt-5">
-                    <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn btn-neon btn-lg">View All 42+ GitHub Pages</a>
+                    <a href="https://github.com/Dev-moe-kyawaung/" target="_blank" class="btn btn-neon">View All 42+ Repos</a>
                 </div>
             </div>
         </section>
 
-        <!-- Lovable WPA Links -->
-        <section id="lovable" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
+        <!-- Lovable WPA -->
+        <section id="lovable" class="section fade-in" style="background:#1a1a2e;">
+            <div class="container">
                 <h2 class="section-title">Lovable WPA Collection</h2>
-                <p class="lead text-center mb-5">My collection of Lovable.dev projects and apps</p>
                 <div class="row g-3">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6>Happy CV Creator</h6>
-                                <a href="https://happy-cv-creator.lovable.app" target="_blank" class="stretched-link">happy-cv-creator.lovable.app</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6>Moe Kyaw Aung</h6>
-                                <a href="https://moekyawaung.lovable.app" target="_blank" class="stretched-link">moekyawaung.lovable.app</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h6>Dev Moe Kyaw Aung</h6>
-                                <a href="https://dev-moekyawaung.lovable.app" target="_blank" class="stretched-link">dev-moekyawaung.lovable.app</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Continue pattern for all Lovable links -->
+                    <div class="col-md-6 col-lg-4"><div class="card p-3"><h6>Happy CV Creator</h6><a href="https://happy-cv-creator.lovable.app" target="_blank">Open App</a></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="card p-3"><h6>Moe Kyaw Aung</h6><a href="https://moekyawaung.lovable.app" target="_blank">Open App</a></div></div>
+                    <div class="col-md-6 col-lg-4"><div class="card p-3"><h6>Dev Moe Kyaw Aung</h6><a href="https://dev-moekyawaung.lovable.app" target="_blank">Open App</a></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Email Collection -->
+        <!-- Emails -->
         <section id="emails" class="section fade-in">
-            <div class="container-fluid">
-                <h2 class="section-title">Contact Email Collection</h2>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card text-center p-4">
-                            <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-magenta);"></i>
-                            <h6>Primary</h6>
-                            <a href="mailto:moekyawaung@programmer.net" class="text-muted">moekyawaung@programmer.net</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card text-center p-4">
-                            <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-magenta);"></i>
-                            <h6>Tech</h6>
-                            <a href="mailto:moekyawaung@technologist.com" class="text-muted">moekyawaung@technologist.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card text-center p-4">
-                            <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-magenta);"></i>
-                            <h6>Developer</h6>
-                            <a href="mailto:moekyawaung@techie.com" class="text-muted">moekyawaung@techie.com</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mb-4">
-                        <div class="card text-center p-4">
-                            <i class="fas fa-envelope fa-2x mb-3" style="color: var(--accent-magenta);"></i>
-                            <h6>Business</h6>
-                            <a href="mailto:moekyawaung@engineer.com" class="text-muted">moekyawaung@engineer.com</a>
-                        </div>
-                    </div>
+            <div class="container">
+                <h2 class="section-title">Email Collection</h2>
+                <div class="row g-3">
+                    <div class="col-md-3"><div class="card p-4 text-center"><i class="fas fa-envelope fa-2x mb-3"></i><a href="mailto:moekyawaung@programmer.net">moekyawaung@programmer.net</a></div></div>
+                    <div class="col-md-3"><div class="card p-4 text-center"><i class="fas fa-envelope fa-2x mb-3"></i><a href="mailto:moekyawaung@technologist.com">moekyawaung@technologist.com</a></div></div>
+                    <div class="col-md-3"><div class="card p-4 text-center"><i class="fas fa-envelope fa-2x mb-3"></i><a href="mailto:moekyawaung@techie.com">moekyawaung@techie.com</a></div></div>
+                    <div class="col-md-3"><div class="card p-4 text-center"><i class="fas fa-envelope fa-2x mb-3"></i><a href="mailto:moekyawaung@engineer.com">moekyawaung@engineer.com</a></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Social Media -->
-        <section id="social" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
-                <h2 class="section-title">Social Media Accounts</h2>
+        <!-- Social -->
+        <section id="social" class="section fade-in" style="background:#1a1a2e;">
+            <div class="container">
+                <h2 class="section-title">Social Media</h2>
                 <div class="row text-center">
-                    <div class="col-md-2 mb-3">
-                        <a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank" class="btn btn-outline-primary btn-lg mb-2">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <p class="small">LinkedIn</p>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <a href="https://www.youtube.com/channel/UCuTXUguZb4xjeL2nX8WJGew" target="_blank" class="btn btn-outline-danger btn-lg mb-2">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <p class="small">YouTube</p>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <a href="https://gravatar.com/moekyawaung13721" target="_blank" class="btn btn-outline-warning btn-lg mb-2">
-                            <i class="fas fa-user-circle"></i>
-                        </a>
-                        <p class="small">Gravatar</p>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <a href="https://www.tumblr.com/moekyawaung" target="_blank" class="btn btn-outline-info btn-lg mb-2">
-                            <i class="fab fa-tumblr"></i>
-                        </a>
-                        <p class="small">Tumblr</p>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <a href="https://bsky.app/profile/moekyawaung96.bsky.social" target="_blank" class="btn btn-outline-secondary btn-lg mb-2">
-                            <i class="fab fa-bluesky"></i>
-                        </a>
-                        <p class="small">Bluesky</p>
-                    </div>
-                    <div class="col-md-2 mb-3">
-                        <a href="#" class="btn btn-outline-success btn-lg mb-2">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <p class="small">GitHub</p>
-                    </div>
+                    <div class="col-6 col-md-3"><a href="https://www.linkedin.com/in/moe-kyaw-aung-2653093a1" target="_blank"><i class="fab fa-linkedin fa-3x mb-2"></i><div>LinkedIn</div></a></div>
+                    <div class="col-6 col-md-3"><a href="https://www.youtube.com/channel/UCuTXUguZb4xjeL2nX8WJGew" target="_blank"><i class="fab fa-youtube fa-3x mb-2"></i><div>YouTube</div></a></div>
+                    <div class="col-6 col-md-3"><a href="https://gravatar.com/moekyawaung13721" target="_blank"><i class="fas fa-user-circle fa-3x mb-2"></i><div>Gravatar</div></a></div>
+                    <div class="col-6 col-md-3"><a href="https://bsky.app/profile/moekyawaung96.bsky.social" target="_blank"><i class="fab fa-bluesky fa-3x mb-2"></i><div>Bluesky</div></a></div>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing/Services -->
+        <!-- Pricing -->
         <section id="pricing" class="section fade-in">
-            <div class="container-fluid">
-                <h2 class="section-title">Development Services</h2>
-                <div class="pricing-table">
-                    <div class="pricing-card">
-                        <h3>Starter App</h3>
-                        <div class="price">$999</div>
-                        <ul class="list-unstyled mb-4">
-                            <li>Basic Android App</li>
-                            <li>Kotlin + Jetpack</li>
-                            <li>Firebase Integration</li>
-                            <li>1 Month Support</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-neon">Get Started</a>
-                    </div>
-                    <div class="pricing-card featured">
-                        <div class="badge bg-primary mb-3">Most Popular</div>
-                        <h3>Professional</h3>
-                        <div class="price">$2999<span class="small">/mo</span></div>
-                        <ul class="list-unstyled mb-4">
-                            <li>Complete Android App</li>
-                            <li>Compose UI + Room DB</li>
-                            <li>REST APIs + Caching</li>
-                            <li>3 Months Support</li>
-                            <li>App Store Publishing</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-neon">Choose Pro</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="price">$5999+</div>
-                        <ul class="list-unstyled mb-4">
-                            <li>Full-Scale Solution</li>
-                            <li>Clean Architecture</li>
-                            <li>Advanced Security</li>
-                            <li>6+ Months Support</li>
-                            <li>CI/CD Pipeline</li>
-                        </ul>
-                        <a href="#contact" class="btn btn-neon">Enterprise</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section id="testimonials" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
-                <h2 class="section-title">What Clients Say</h2>
-                <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row justify-content-center">
-                                <div class="col-md-8 text-center">
-                                    <blockquote class="blockquote">
-                                        <p>"Moe delivered our POS app ahead of schedule with rock-solid performance. True senior level expertise!"</p>
-                                        <footer class="blockquote-footer">Tech Startup CEO</footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row justify-content-center">
-                                <div class="col-md-8 text-center">
-                                    <blockquote class="blockquote">
-                                        <p>"12 years of experience really shows. Our video player app is now our flagship product!"</p>
-                                        <footer class="blockquote-footer">Media Company CTO</footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery -->
-        <section class="section fade-in">
-            <div class="container-fluid">
-                <h2 class="section-title">Project Gallery</h2>
-                <div class="gallery">
-                    <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795675037_heh9xk.png')">
-                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795675037_heh9xk.png" alt="Project 1">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778794626112_ega7kk.png')">
-                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778794626112_ega7kk.png" alt="Project 2">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dye5qpwii/image/upload/v1778795859/copilot_image_1778794430377_n7xlmz.png')">
-                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795859/copilot_image_1778794430377_n7xlmz.png" alt="Project 3">
-                    </div>
-                    <div class="gallery-item" onclick="openLightbox('https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795000722_eo96gj.png')">
-                        <img src="https://res.cloudinary.com/dye5qpwii/image/upload/v1778795856/copilot_image_1778795000722_eo96gj.png" alt="Project 4">
-                    </div>
+            <div class="container">
+                <h2 class="section-title">Services</h2>
+                <div class="row g-4">
+                    <div class="col-md-4"><div class="card p-4 text-center"><h4>Starter</h4><div class="display-5 my-3" style="color:#00d9ff">$999</div><a href="#contact" class="btn btn-neon">Get Started</a></div></div>
+                    <div class="col-md-4"><div class="card p-4 text-center" style="border:3px solid #00d9ff"><h4>Professional</h4><div class="display-5 my-3" style="color:#00d9ff">$2999</div><a href="#contact" class="btn btn-neon">Choose Pro</a></div></div>
+                    <div class="col-md-4"><div class="card p-4 text-center"><h4>Enterprise</h4><div class="display-5 my-3" style="color:#00d9ff">$5999+</div><a href="#contact" class="btn btn-neon">Enterprise</a></div></div>
                 </div>
             </div>
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
-                <h2 class="section-title">Frequently Asked Questions</h2>
+        <section id="faq" class="section fade-in" style="background:#1a1a2e;">
+            <div class="container">
+                <h2 class="section-title">FAQ</h2>
                 <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                What technologies do you specialize in?
-                            </button>
-                        </h2>
-                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Kotlin, Jetpack Compose, ViewModel, Room, Firebase, REST APIs, Clean Architecture, and modern Android development practices.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                How long does app development take?
-                            </button>
-                        </h2>
-                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
-                                Simple apps: 2-4 weeks. Professional apps: 6-12 weeks. Enterprise solutions: 3-6 months depending on complexity.
-                            </div>
-                        </div>
-                    </div>
+                    <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">What technologies do you use?</button></h2><div id="faq1" class="accordion-collapse collapse show"><div class="accordion-body">Kotlin, Jetpack Compose, Firebase, Clean Architecture.</div></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- Newsletter -->
-        <section class="section fade-in">
-            <div class="container-fluid">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 text-center">
-                        <h2 class="section-title mb-4">Stay Updated</h2>
-                        <p class="lead mb-4">Get latest project updates and Android development tips</p>
-                        <form class="newsletter-form">
-                            <div class="input-group">
-                                <input type="email" class="form-control" placeholder="Enter your email">
-                                <button class="btn btn-neon" type="submit">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section fade-in" style="background: var(--bg-secondary);">
-            <div class="container-fluid">
-                <h2 class="section-title">Get In Touch</h2>
+        <!-- Contact -->
+        <section id="contact" class="section fade-in">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-md-5">
                         <div class="card p-4">
-                            <h4>Contact Information</h4>
-                            <div class="d-flex align-items-center mb-3">
-                                <i class="fas fa-phone fa-lg me-3" style="color: var(--primary-cyan); width: 40px;"></i>
-                                <h5>+95 9 889 000 889</h5>
-                            </div>
-                            <div class="mb-3">
-                                <i class="fas fa-map-marker-alt fa-lg me-3" style="color: var(--accent-magenta); width: 40px;"></i>
-                                <p>Yangon, Myanmar</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <i class="fas fa-globe fa-lg me-3" style="color: var(--primary-cyan); width: 40px;"></i>
-                                <a href="https://github.com/Dev-moe-kyawaung/" target="_blank">Dev-moe-kyawaung</a>
-                            </div>
+                            <h5><i class="fas fa-phone me-2"></i> +95 9 889 000 889</h5>
+                            <p><i class="fas fa-map-marker-alt me-2"></i> Yangon, Myanmar</p>
+                            <a href="https://github.com/Dev-moe-kyawaung/" target="_blank">GitHub Profile</a>
                         </div>
-                        <!-- Google Maps -->
-                        <div id="map"></div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-md-7 mt-4 mt-md-0">
                         <form class="contact-form">
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            <div class="row g-3">
+                                <div class="col-md-6"><input type="text" class="form-control" placeholder="Your Name" required></div>
+                                <div class="col-md-6"><input type="email" class="form-control" placeholder="Your Email" required></div>
+                                <div class="col-12"><textarea class="form-control" rows="5" placeholder="Your Message" required></textarea></div>
+                                <div class="col-12"><button type="submit" class="btn btn-neon w-100">Send Message</button></div>
                             </div>
-                            <div class="mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-neon w-100">Send Message</button>
                         </form>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <!-- Sticky CTA -->
-    <a href="#contact" class="btn btn-neon sticky-cta shadow-lg">
-        <i class="fas fa-comments me-2"></i>Hire Me
-    </a>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox">
     </div>
 
-    <!-- Bootstrap JS -->
+    <!-- Buttons -->
+    <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <a href="#contact" class="btn btn-neon sticky-cta"><i class="fas fa-comments me-2"></i> Hire Me</a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    
     <script>
         // Preloader
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 1000);
+            setTimeout(() => document.getElementById('preloader').classList.add('d-none'), 800);
         });
-
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        const cursorFollower = document.getElementById('cursor-follower');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            }, 100);
-        });
-
-        // Hero Canvas Particle Animation
-        const canvas = document.getElementById('hero-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const particles = [];
-        for (let i = 0; i < 100; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 2,
-                vy: (Math.random() - 0.5) * 2,
-                radius: Math.random() * 3 + 1
-            });
-        }
-
-        function animateCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(p => {
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(0, 217, 255, ${Math.random() * 0.5 + 0.2})`;
-                ctx.fill();
-
-                p.x += p.vx;
-                p.y += p.vy;
-
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-            });
-
-            requestAnimationFrame(animateCanvas);
-        }
-        animateCanvas();
 
         // Theme Toggle
         const themeToggle = document.getElementById('themeToggle');
         themeToggle.addEventListener('click', () => {
             document.body.dataset.theme = document.body.dataset.theme === 'light' ? 'dark' : 'light';
             localStorage.setItem('theme', document.body.dataset.theme);
-            themeToggle.querySelector('i').className = document.body.dataset.theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+            themeToggle.innerHTML = document.body.dataset.theme === 'light' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
         });
-
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'light') {
-            document.body.dataset.theme = 'light';
-            themeToggle.querySelector('i').className = 'fas fa-sun';
-        }
 
         // Mobile Menu
-        const sidebar = document.getElementById('sidebar');
-        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        mobileMenuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('mobile-open');
+        document.getElementById('mobileMenuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('mobile-open');
         });
 
-        // Smooth Scroll Navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', (e) => {
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(anchor.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-                sidebar.classList.remove('mobile-open');
+                document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('sidebar').classList.remove('mobile-open');
             });
         });
-
-        // Active Nav Link
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPos = window.scrollY + 200;
-
-            sections.forEach(section => {
-                if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                    document.querySelector(`a[href="#${section.id}"]`).classList.add('active');
-                }
-            });
-        });
-
-        // Scroll Animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Stats Counter
-        const stats = document.querySelectorAll('.stat-number');
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = parseInt(entry.target.dataset.target);
-                    const increment = target / 100;
-                    let current = 0;
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= target) {
-                            entry.target.textContent = target;
-                            clearInterval(timer);
-                        } else {
-                            entry.target.textContent = Math.floor(current);
-                        }
-                    }, 20);
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        });
-
-        stats.forEach(stat => statsObserver.observe(stat));
 
         // Back to Top
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('show');
-            } else {
-                backToTop.classList.remove('show');
-            }
+            backToTop.classList.toggle('show', window.scrollY > 400);
         });
-
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
         // Contact Form
-        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you! Your message has been sent. I\'ll get back to you soon!');
-            e.target.reset();
+            alert('Thank you! Message sent successfully.');
+            this.reset();
         });
 
-        // Newsletter Form
-        document.querySelector('.newsletter-form').addEventListener('submit', (e) => {
+        // PWA Install
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
-            alert('Thanks for subscribing! You\'ll receive updates soon.');
-            e.target.querySelector('input').value = '';
-        });
-
-        // Lightbox
-        function openLightbox(src) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightboxImg.src = src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-
-        // Parallax Effect (simplified)
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelectorAll('.parallax');
-            parallax.forEach(el => {
-                el.style.transform = `translateY(${scrolled * 0.5}px)`;
+            deferredPrompt = e;
+            
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-neon mt-3';
+            btn.innerHTML = '<i class="fas fa-download me-2"></i> Install App';
+            btn.style.position = 'fixed';
+            btn.style.bottom = '90px';
+            btn.style.left = '20px';
+            btn.style.zIndex = '100';
+            document.body.appendChild(btn);
+            
+            btn.addEventListener('click', async () => {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    const { outcome } = await deferredPrompt.userChoice;
+                    if (outcome === 'accepted') btn.style.display = 'none';
+                    deferredPrompt = null;
+                }
             });
         });
 
-        // Google Maps (placeholder - replace with real API key)
-        // function initMap() {
-        //     const map = new google.maps.Map(document.getElementById('map'), {
-        //         center: {lat: 16.8471, lng: 96.2832}, // Yangon
-        //         zoom: 12
-        //     });
-        // }
-
-        // Form Validation
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                const forms = document.querySelectorAll('.needs-validation');
-                Array.prototype.slice.call(forms).forEach(function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            });
-        })();
-
-        // Phone number click to copy
-        document.querySelectorAll('h5').forEach(phone => {
-            if (phone.textContent.includes('+95')) {
-                phone.style.cursor = 'pointer';
-                phone.addEventListener('click', () => {
-                    navigator.clipboard.writeText(phone.textContent);
-                    phone.textContent = 'Copied!';
-                    setTimeout(() => {
-                        phone.textContent = '+95 9 889 000 889';
-                    }, 2000);
-                });
-            }
-        });
-
-        console.log('🚀 Moe-Kyaw-Aung-Portfolio V58 loaded successfully! Senior Android Developer portfolio with 42+ GitHub repos, Lovable apps, and production-ready features.');
+        console.log('%c[MKA Portfolio V58] PWA-ready portfolio loaded.', 'color:#00d9ff');
     </script>
-
-    <!-- Accessibility: Skip to main content -->
-    <a class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
 </body>
 </html>
